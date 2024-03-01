@@ -4,15 +4,6 @@ import { styled } from 'styled-components';
 import Button from './Button';
 import Input from './Input';
 
-// Tagged templates for styled components
-const ControlContainer = styled.div`
-	display: flex;
-	flex-direction: column;
-	gap: 0.5rem;
-	margin-bottom: 1.5rem;
-`;
-
-
 export default function AuthInputs() {
     const [enteredEmail, setEnteredEmail] = useState('');
     const [enteredPassword, setEnteredPassword] = useState('');
@@ -34,30 +25,33 @@ export default function AuthInputs() {
     const passwordNotValid = submitted && enteredPassword.trim().length < 6;
 
     return (
-		<div id='auth-inputs'>
-			<ControlContainer>
-                <Input
-                    label="Email"
-                    invalid={emailNotValid}
-                    type='email'
-                    onChange={(event) => handleInputChange('email', event.target.value)}
-                />
+		<div
+			id='auth-inputs'
+			className='mx-auto shadow-md rounded w-full max-w-sm p-8 bg-gradient-to-b from-stone-700 to-stone-800'
+		>
+			<div className='flex flex-col gap-6 mb-6'>
+				<Input
+					label='Email'
+					invalid={emailNotValid}
+					type='email'
+					onChange={(event) => handleInputChange('email', event.target.value)}
+				/>
 
-                <Input
-                    label="Password"
-                    invalid={passwordNotValid}
-                    type='password'
-                    onChange={(event) => handleInputChange('password', event.target.value)}
-                />
-			</ControlContainer>
+				<Input
+					label='Password'
+					invalid={passwordNotValid}
+					type='password'
+					onChange={(event) => handleInputChange('password', event.target.value)}
+				/>
+			</div>
 
-			<div className='actions'>
-				<button type='button' className='text-button'>
+			<div className='flex gap-4 justify-between'>
+				<button
+					type='button'
+					className='text-amber-400 transition duration-250 hover:text-amber-500 hover:-translate-y-0.5'
+				>
 					Create a new account
 				</button>
-				{/* 				<button className='button' onClick={handleLogin}>
-					Sign In
-				</button> */}
 				<Button onClick={handleLogin}>Sign In</Button>
 			</div>
 		</div>

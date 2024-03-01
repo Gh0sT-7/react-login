@@ -6,7 +6,7 @@ export default function CustomInput({ label, invalid, ...props }) {
         labelClasses += ' text-red-600';
         inputClasses += ' text-red-500 bg-red-100 border-red-300';
     } else {
-        labelClasses += ' text-slate-700';
+        labelClasses += ' text-stone-100';
         inputClasses += ' bg-stone-100 text-gray-700';
     }
 
