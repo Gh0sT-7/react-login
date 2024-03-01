@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { styled } from 'styled-components';
 
 import Button from './Button';
+import Input from './Input';
 
 // Tagged templates for styled components
 const ControlContainer = styled.div`
@@ -35,29 +36,21 @@ export default function AuthInputs() {
     return (
 		<div id='auth-inputs'>
 			<ControlContainer>
-				{/* <div className="controls"> */}
-				<p>
-					{/* <label className={`label ${emailNotValid ? 'invalid' : ''}`}>Email</label> */}
-					<Label $invalid={emailNotValid}>Email</Label>
-					<Input
-						type='email'
-						// style={{
-						//     backgroundColor: emailNotValid ? '#fed2d2' : '#d1d5db'
-						// }}
-						$invalid={emailNotValid}
-						onChange={(event) => handleInputChange('email', event.target.value)}
-					/>
-				</p>
-				<p>
-					<Label className={`label ${passwordNotValid ? 'invalid' : ''}`}>Password</Label>
-					<Input
-						type='password'
-						className={passwordNotValid ? 'invalid' : undefined}
-						onChange={(event) => handleInputChange('password', event.target.value)}
-					/>
-				</p>
-				{/* </div> */}
+                <Input
+                    label="Email"
+                    invalid={emailNotValid}
+                    type='email'
+                    onChange={(event) => handleInputChange('email', event.target.value)}
+                />
+
+                <Input
+                    label="Password"
+                    invalid={passwordNotValid}
+                    type='password'
+                    onChange={(event) => handleInputChange('password', event.target.value)}
+                />
 			</ControlContainer>
+
 			<div className='actions'>
 				<button type='button' className='text-button'>
 					Create a new account
