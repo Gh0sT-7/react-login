@@ -27,7 +27,7 @@ export default function AuthInputs() {
     return (
 		<div
 			id='auth-inputs'
-			className='mx-auto shadow-md rounded w-full max-w-sm p-8 bg-gradient-to-b from-stone-700 to-stone-800'
+			className='mx-auto shadow-md rounded w-full max-w-sm p-8 bg-gradient-to-b from-indigo-500 to-violet-800'
 		>
 			<div className='flex flex-col gap-6 mb-6'>
 				<Input
